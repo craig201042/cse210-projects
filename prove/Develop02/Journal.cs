@@ -12,11 +12,10 @@ public class Journal{
     }
     public void saveFile(string filename){
         using(StreamWriter outputFile = new StreamWriter(filename)){
-        
-             foreach(Entry e in _entries){
-                      
-                outputFile.WriteLine(e);
-             }
+                   foreach(Entry e in _entries){
+                     outputFile.WriteLine($"{e._date}  {e._prompt}");
+                     outputFile.WriteLine(e._response);
+                   }
         }
     }
     public void loadFile(string filename){

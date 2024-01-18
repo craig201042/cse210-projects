@@ -16,7 +16,6 @@ class Program
        int choice=0;
        Journal journal=new Journal(); 
        PromptGenerator pg=new PromptGenerator();
-       Entry entry=new Entry();
        while(choice<_menu.Count){
          Console.WriteLine("Please select one of the following choices?");
          foreach(string m in _menu){
@@ -25,6 +24,7 @@ class Program
          Console.Write("What would you like to do?");
          choice=int.Parse(Console.ReadLine());
          if(choice ==1){
+              Entry entry=new Entry();
               entry._prompt=pg.GetRandomPrompt();   
               Console.WriteLine(entry._prompt);
               entry._response=Console.ReadLine(); 

@@ -1,3 +1,4 @@
+//add a prompt to motivate people to write the journal
 using System;
 using System.Collections.Generic;
 using System.IO;

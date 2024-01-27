@@ -34,10 +34,12 @@ public class Scripture{
     }
     public bool IsCompletelyHidden(){
           foreach(Word w in _words){
-            while(w.IsHidden()==true){
+            if(w.IsHidden()==true){
                 _IsCompletelyHidden=true;
             }
-            _IsCompletelyHidden=false;
+            else{
+              _IsCompletelyHidden=false;
+            }
           }      
           return _IsCompletelyHidden;                  
     }

@@ -6,7 +6,6 @@ public class Scripture{
     private List<string> s;
 
     private bool _IsCompletelyHidden;
-    private string str=" ";
 
     public Scripture(Reference reference,string text){
              _reference=reference;
@@ -25,10 +24,9 @@ public class Scripture{
            _words[numberToHide].Hide();
     }
     public string GetTheDispaly(){ 
-          foreach(Word w in _words){
-            str=w.GetText();
-            s.Add(str);
-          }
+          for(int i=0;i<_words.Count;i++){
+                s[i]=_words[i].GetText();
+             }
           string s1=string.Join(" ", s.ToArray());
           return _reference.GetDispalyText()+s1;
     }

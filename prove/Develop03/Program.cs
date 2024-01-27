@@ -4,6 +4,8 @@ using System.Globalization;
 class Program
 {
     private static bool hide;
+    private static string userInput;
+
     static void Main(string[] args)
     {
         Reference  reference= new Reference("John", 3, 16, 17);
@@ -11,12 +13,18 @@ class Program
         Scripture script = new Scripture(reference, content);
         Console.WriteLine(script.GetTheDispaly());
         Console.WriteLine("Press enter to continue or type 'Quit' to finish");
-        while(Console.ReadKey().Key== ConsoleKey.Enter| Console.ReadLine()!="Quit" | hide!=true){
-            for(int i=0;i<3;i++){
+        userInput=Console.ReadLine();
+        while(hide!=true){
+            if(userInput!="Quit"){
+             for(int i=0;i<3;i++){
                 script.HideRandomWords(content.Length);
+             }
             }
-            script.GetTheDispaly();
-            hide=script.IsCompletelyHidden();       
+            else{
+                break;
+            }
+          script.GetTheDispaly();
+          hide=script.IsCompletelyHidden();       
         }
     }
 }

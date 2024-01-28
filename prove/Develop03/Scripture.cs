@@ -16,23 +16,14 @@ public class Scripture{
              }
     }
     public void HideRandomWords(int numberToHide){         
-           if(numberToHide<_words.Count){
            _words[numberToHide].Show();
            Console.ReadLine();
            Console.Clear();
            _words[numberToHide].Hide();
-          }
-          else{
-            return;
-          }
     }
     public string GetTheDispaly(){ 
-          foreach(Word w in _words){
-                int i=0;
-                if(i<_words.Count){
-                  s[i]=w.GetText();
-                  i++;
-                }
+          for(int i=0;i<_words.Count;i++){
+                  s[i]=_words[i].GetText();
           }
           string s1=string.Join(" ", s);
           return _reference.GetDispalyText()+s1;

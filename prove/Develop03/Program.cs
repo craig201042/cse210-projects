@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 class Program
 {
-    private static bool hide;
+    private static bool hide=false;
     private static string userInput;
     private static List<string> sl;
 
@@ -17,17 +17,20 @@ class Program
         Console.WriteLine(script.GetTheDispaly());
         Console.WriteLine("Press enter to continue or type 'Quit' to finish");
         userInput=Console.ReadLine();
-        while(hide!=true){
-            if(userInput!="Quit"){
+        while(userInput!="Quit"){
+            if(hide!=true){
              for(int i=0;i<3;i++){
                 script.HideRandomWords(rnd.Next(sl.Count));
              }
+             Console.Clear();
+             Console.WriteLine(script.GetTheDispaly());
+             Console.WriteLine("Press enter to continue or type 'Quit' to finish");
+             userInput=Console.ReadLine();
+             hide=script.IsCompletelyHidden(); 
             }
             else{
                 break;
-            }
-          script.GetTheDispaly();
-          hide=script.IsCompletelyHidden();       
+            }   
         }
     }
 }

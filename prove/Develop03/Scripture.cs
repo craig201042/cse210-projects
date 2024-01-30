@@ -2,8 +2,8 @@
 public class Scripture{
     private Reference _reference;
     private List<Word> _words=new List<Word>(); 
-    private Word w=new Word("text");
     private List<string> s;
+    private Random rnd=new Random();
 
     private bool _IsCompletelyHidden;
 
@@ -11,15 +11,20 @@ public class Scripture{
              _reference=reference;
              s=text.Split(',').ToList();
              for(int i=0;i<s.Count;i++){
+                 Word w=new Word("text");
                  w.SetText(s[i]);
                 _words.Add(w);
              }
     }
     public void HideRandomWords(int numberToHide){         
-           _words[numberToHide].Show();
+          for(int i=0;i<numberToHide;i++){
+           int rndNumber=rnd.Next(_words.Count);
+           _words[rndNumber].Show();
            Console.ReadLine();
            Console.Clear();
-           _words[numberToHide].Hide();
+           _words[rndNumber].Hide();
+           _words[rndNumber].SetText("_");
+          }
     }
     public string GetTheDispaly(){ 
           for(int i=0;i<_words.Count;i++){
@@ -35,6 +40,7 @@ public class Scripture{
             }
             else{
               _IsCompletelyHidden=false;
+              break;
             }
           }      
           return _IsCompletelyHidden;                  

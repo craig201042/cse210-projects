@@ -20,10 +20,12 @@ public class Word{
         Console.WriteLine(_text);
     }
     public bool IsHidden(){
-        if(_text=="_")
+        if(_text=="_"){
            _isHidden=true;
-         else
+        }
+        else{
            _isHidden=false;
+        }
         return _isHidden;
     }
 }

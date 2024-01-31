@@ -23,7 +23,6 @@ public class Scripture{
            Console.ReadLine();
            Console.Clear();
            _words[rndNumber].Hide();
-           _words[rndNumber].SetText("_");
           }
     }
     public string GetTheDispaly(){ 

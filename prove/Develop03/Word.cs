@@ -14,7 +14,8 @@ public class Word{
         _text=text;
     }
     public void Hide(){
-        Console.WriteLine("_");
+        _text="_";
+        Console.WriteLine(_text);
     }
     public void Show(){
         Console.WriteLine(_text);

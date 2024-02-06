@@ -58,7 +58,7 @@ public class ReflectingActivity:Activity{
          return p;
     }
     public string GetRandomQuestion(){
-         string q=_questions[rnd.Next(_questions.Count)];
+         q=_questions[rnd.Next(_questions.Count)];
          return q;
     }
     public void DisplayPrompt(){
